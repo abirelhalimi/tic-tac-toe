@@ -50,7 +50,7 @@ class Board extends React.Component {
         }
 
         return (
-            <div>
+            <div className="board-container">
                 <div className="status">{status}</div>
                 <div className="board-row">
                     {this.renderSquare(0)}
@@ -80,8 +80,9 @@ class Game extends React.Component {
                     <Board/>
                 </div>
                 <div className="game-info">
-                    <div>{/* status */}</div>
-                    <ol>{/* TODO */}</ol>
+                    <div>
+                        <button className="reset" onClick={() => window.location.reload()}>Reset</button>
+                    </div>
                 </div>
             </div>
         );
@@ -89,9 +90,14 @@ class Game extends React.Component {
 }
 
 // ========================================
+const tic = (
+    <div className="main">
+        <Game/>
+    </div>
+);
 
 ReactDOM.render(
-    <Game/>,
+    tic,
     document.getElementById('root')
 );
 
